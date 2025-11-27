@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Motorista - Mobilidade</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <style>#map{height:80vh} body{font-family:Arial;margin:0;padding:0} #panel{padding:8px}</style>
+</head>
+<body>
+  <div id="panel">
+    <button id="logout">Logout</button>
+    <div>Motorista: <span id="me"></span></div>
+    <div>Corridas recebidas:</div>
+    <ul id="rides"></ul>
+    <div>Chat:</div>
+    <input id="chatTo" placeholder="para (usuário)"/>
+    <input id="chatText" placeholder="mensagem"/>
+    <button id="sendChat">Enviar</button>
+  </div>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+  <script>criarMapa('motorista');</script>
+</body>
+</html>

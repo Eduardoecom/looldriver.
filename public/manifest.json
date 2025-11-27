@@ -1,0 +1,1 @@
+{"name": "Meu App Mobilidade", "short_name": "Mobilidade", "start_url": "/login.html", "display": "standalone", "background_color": "#fff", "description": "App de mobilidade demo com WebSocket, routing e PWA", "icons": [{"src": "/icon-192.png", "sizes": "192x192", "type": "image/png"}]}

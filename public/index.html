@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cliente - Mobilidade</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <style>#map{height:70vh} body{font-family:Arial;margin:0;padding:0} #controls{padding:10px}</style>
+</head>
+<body>
+  <div id="controls">
+    <button id="logout">Logout</button>
+    <input id="to" placeholder="Destino (lat,lng) ex: -15.79,-47.88"/>
+    <button id="requestRide">Pedir Corrida</button>
+    <div id="status"></div>
+  </div>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.min.js"></script>
+  <script src="app.js"></script>
+  <script>criarMapa('cliente');</script>
+</body>
+</html>

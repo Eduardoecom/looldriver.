@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Login - Mobilidade</title>
+  <style>body{font-family:Arial;padding:20px;max-width:420px;margin:auto;} input{display:block;margin:8px 0;padding:8px;width:100%}</style>
+</head>
+<body>
+  <h2>Login / Registrar</h2>
+  <label>Usuário<input id="username"/></label>
+  <label>Senha<input id="password" type="password"/></label>
+  <label>Tipo
+    <select id="role">
+      <option value="client">Cliente</option>
+      <option value="driver">Motorista</option>
+    </select>
+  </label>
+  <button id="register">Registrar</button>
+  <button id="login">Entrar</button>
+  <script>
+    async function post(path, body) {
+      const res = await fetch(path, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)});
+      return res.json();
+    }
+    document.getElementById('register').onclick = async () => {
+      const u = document.getElementById('username').value;
+      const p = document.getElementById('password').value;
+      const r = document.getElementById('role').value;
+      const res = await post('/api/register',{username:u,password:p,role:r});
+      if(res.error) alert('Erro: '+res.error); else alert('Registrado! Faça login.');
+    };
+    document.getElementById('login').onclick = async () => {
+      const u = document.getElementById('username').value;
+      const p = document.getElementById('password').value;
+      const res = await post('/api/login',{username:u,password:p});
+      if(res.error) return alert('Erro: '+res.error);
+      // save to localStorage and redirect
+      localStorage.setItem('user', JSON.stringify(res));
+      if(res.role === 'driver') location.href='/driver.html';
+      else location.href='/';
+    };
+  </script>
+</body>
+</html>
