@@ -1,0 +1,7 @@
+{
+  "env": {
+    "VITE_API_URL": "https://seu-backend.fly.dev",
+    "VITE_SUPABASE_URL": "https://seu-projeto.supabase.co",
+    "VITE_SUPABASE_KEY": "sb_secret_NJtG2U8cQ5NqMn_MWum2qA_nVdiJSPT"
+  }
+}
